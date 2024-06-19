@@ -13,7 +13,7 @@
           "detachFromLayout": true,
           "widgetId": "0",
           "topRow": 0,
-          "bottomRow": 5000,
+          "bottomRow": 720,
           "containerStyle": "none",
           "snapRows": 124,
           "parentRowSpace": 1,
@@ -26,7 +26,24 @@
           "dynamicBindingPathList": [],
           "leftColumn": 0
         },
-        "layoutOnLoadActions": [],
+        "layoutOnLoadActions": [
+          [
+            {
+              "id": "Page1_fetch_users",
+              "name": "fetch_users",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                "sel_country_filter.selectedOptionValue !== \"\" ? \"AND country = '\" + sel_country_filter.selectedOptionValue + \"'\" : \"\"",
+                "dat_bornAfter.selectedDate",
+                "\"%\" + (tbl_users.searchText || \"\") + \"%\"",
+                "tbl_users.pageOffset",
+                "tbl_users.pageSize - 1"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ]
+        ],
         "layoutOnLoadActionErrors": [],
         "validOnPageLoadActions": true,
         "id": "Page1",
